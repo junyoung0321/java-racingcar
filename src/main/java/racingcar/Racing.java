@@ -24,7 +24,19 @@ public class Racing {
         rounds = Integer.parseInt(Console.readLine().trim());
     }
 
+    private void play() {
 
+        for (int i = 0; i <= rounds; i++) {
+            raceRound();
+            printRaceStatus();
+        }
+    }
+
+    private void raceRound() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
 
 
 }
