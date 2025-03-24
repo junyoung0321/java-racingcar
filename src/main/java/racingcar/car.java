@@ -5,6 +5,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 public class car {
     private final String name;
     private int position;
+    private int movepoint;
 
     public car(String name) {
         if (name.length() > 5) {
@@ -14,6 +15,12 @@ public class car {
         this.position = 0;
     }
 
+    public void move() {
+        movepoint = Randoms.pickNumberInRange(0, 9);
+        if (movepoint >= 4) {
+            this.position++;
+        }
+    }
 
     public int getPosition() {
         return position;
