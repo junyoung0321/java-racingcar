@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Racing {
     private final List<car>  cars =  new ArrayList<>();
-    private int round;
+    private int rounds;
 
 
     private void inputCars() {
@@ -18,6 +18,13 @@ public class Racing {
             cars.add(new car(name.trim()));
         }
     }
+
+    private void inputRounds() {
+        System.out.println("시도할 회수는 몇회인가요?");
+        rounds = Integer.parseInt(Console.readLine().trim());
+    }
+
+
 
 
 }
