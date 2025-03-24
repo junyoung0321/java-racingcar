@@ -38,5 +38,12 @@ public class Racing {
         }
     }
 
+    private void printRaceStatus() {
+        for (Car car : cars) {
+            System.out.println(car.getName() + "-".repeat(car.getPosition()));
+        }
+        System.out.println();
+    }
+
 
 }
