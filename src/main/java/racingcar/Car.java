@@ -2,12 +2,12 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-public class car {
+public class Car {
     private final String name;
     private int position;
-    private int movepoint;
 
-    public car(String name) {
+
+    public Car(String name) {
         if (name.length() > 5) {
             throw new IllegalArgumentException("차 이름은 5자 이하만 가능합니다.");
         }
@@ -16,8 +16,7 @@ public class car {
     }
 
     public void move() {
-        movepoint = Randoms.pickNumberInRange(0, 9);
-        if (movepoint >= 4) {
+        if (Randoms.pickNumberInRange(0, 9) >= 4) {
             this.position++;
         }
     }
