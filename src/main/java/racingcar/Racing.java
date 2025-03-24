@@ -33,7 +33,7 @@ public class Racing {
 
     private void play() {
 
-        for (int i = 0; i <= rounds; i++) {
+        for (int i = 0; i < rounds; i++) {
             raceRound();
             printRaceStatus();
         }
