@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public class Racing {
-    private final List<Car>  cars =  new ArrayList<>();
+    private final List<Car> cars = new ArrayList<>();
     private int rounds;
 
 
@@ -59,20 +59,33 @@ public class Racing {
         System.out.println();
     }
 
+
     private void printWinners() {
-        int maxPosition = 0;
-        List<String> winners = new ArrayList<>();
-
-        for (Car car : cars) {
-            if (car.getPosition() > maxPosition) {
-                maxPosition = car.getPosition();
-                winners.clear();
-                winners.add(car.getName());
-            } else if (car.getPosition() == maxPosition) {
-                winners.add(car.getName());
-            }
-        }
-
+        int maxPosition = findMaxPosition();
+        List<String> winners = getWinners(maxPosition);
         System.out.println("최종 우승자: " + String.join(", ", winners));
     }
+
+    private int findMaxPosition() {
+        int max = 0;
+        for (Car car : cars) {
+            if (car.getPosition() > max) {
+                max = car.getPosition();
+            }
+        }
+        return max;
+    }
+
+
+    private List<String> getWinners(int maxPosition) {
+        List<String> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winners.add(car.getName());
+
+            }
+        }
+        return winners;
+    }
+
 }
