@@ -5,5 +5,3 @@ public class Application {
         new Racing().start();
     }
 }
-
-
