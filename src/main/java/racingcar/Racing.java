@@ -29,6 +29,13 @@ public class Racing {
     private void inputRounds() {
         System.out.println("시도할 회수는 몇회인가요?");
         rounds = Integer.parseInt(Console.readLine().trim());
+        verificationRound(rounds);
+    }
+
+    private void verificationRound(int value) {
+        if (value <= 0) {
+            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+        }
     }
 
     private void play() {
